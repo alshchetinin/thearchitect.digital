@@ -1,0 +1,21 @@
+@import ../_vars
+.fillter
+    display: flex
+    border-bottom: 1px solid transparentize($text, 0.9)
+    position: sticky
+    top: 0
+    background: fade-out(#fff, 0.2)
+    backdrop-filter: blur(10px)
+    z-index: 5
+    @media screen and (max-width: 720px)
+        overflow-x: scroll
+    &__item
+        display: inline-block
+        padding: 30px 40px
+        &:first-child
+            padding-left: 0px
+        @media screen and (max-width: 720px)
+            padding: 15px 20px
+            flex-shrink: 0
+        &-active
+            color: $accent

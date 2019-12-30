@@ -1,0 +1,72 @@
+@import _vars
+.hero
+    height: $fix100vh
+    display: flex
+    align-items: center
+    padding-bottom: 30px
+    position: relative
+    @media screen and (max-width: 720px)
+        align-items: flex-end
+    h2 
+        color: $text 
+        font-size: 5vw
+        font-weight: 600
+        line-height: 6vw
+    .hero-romb
+        position: absolute
+        right: -13vw
+        top: 3%
+        height: 94%
+        width: 50%
+        background-repeat: no-repeat
+        background-size: contain
+        @media screen and (max-width: 720px)
+            //position: relative
+            top: 20%
+            left: 45%
+    @media screen and (max-width: 720px)
+        padding-bottom: 10px
+        height: 70vh
+    &__headline
+        font-size: 7vw
+        line-height: 8vw
+        font-family: 'aeroport', sans-serif
+        letter-spacing: 1px
+        text-transform: uppercase
+        font-weight: bold
+        //width: 60%
+        background: linear-gradient(192.98deg, #00284B 31.14%, #FF403C 88.47%)
+        -webkit-background-clip: text
+        -webkit-text-fill-color:: transparent 
+        animation: flow-gradient 6s ease-in-out infinite
+        position: relative
+
+        
+        @media screen and (max-width: 480px)
+            font-size: 8vw
+            line-height: 8vw            
+            //font-family: 'Avenir Next', sans-serif
+            width: 100%
+            span 
+                margin-left: 0px
+                        
+        .strike
+            position: relative
+            span
+                position: absolute
+                width: 105%
+                height: 10px
+                top: 53%
+                left: -10px
+                background-color: $accent
+
+
+    
+@keyframes flow-gradient
+    0%
+        background-position: 0 50%
+    50%
+        background-position: 100% -50%
+    100%
+        background-position: 0 50%
+        

@@ -1,0 +1,122 @@
+/*
+ Theme Name: the architect
+ Theme URI: thearchitect.digital
+ Author: Александр Щетинин
+ Author URI: thearchitect.digital
+ Description: the architect official theme.
+ Version: 1.0
+ */
+
+@import vars
+@import fonts
+@import libs
+
+::placeholder
+	color: #666
+
+::selection
+	background-color: $accent
+	color: #fff
+
+input, textarea
+	outline: none
+	&:focus:required:invalid
+		border-color: red
+	&:required:valid
+		border-color: green
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	line-height: 1.65
+	font-family: 'aeroport', sans-serif
+	font-weight: 300
+	overflow-x: hidden
+	color: $text
+	height: 100%
+
+a
+	color: $text
+	text-decoration: none
+	transition: all 0.3 ease-in-out
+	&:hover
+		text-decoration: none
+		color: $accent
+
+h2
+	font-size: 32px
+	line-height: 36px
+
+.tag
+	display: inline-block
+	padding: 7px 14px
+	background: rgba(255, 255, 255, 0.6)
+	backdrop-filter: blur(40px)
+	border-radius: 4px
+	margin-right: 5px
+	font-size: 12px
+	line-height: 12px
+	&-gray
+		background: rgba(218, 218, 218, 0.6)
+
+.container
+  max-width: 1920px
+  margin: 0 auto
+  padding: 0px 30px
+  min-width: 320px
+  width: 100%
+  @media screen and (max-width: 720px)
+	  padding: 0px 10px
+
+.img-responsive
+	display: block
+	max-width: 100%
+	height: auto
+
+.parent // Lazy Load Placeholder Generator: https://webdesign-master.ru/services/lazy/
+	background-image: url(data:image/gif;base64,R0lGODlhCgAIAIABAN3d3f///yH5BAEAAAEALAAAAAAKAAgAAAINjAOnyJv2oJOrVXrzKQA7)
+.description
+	font-size: 20px
+	line-height: 30px
+.section-headline
+	font-size: 30px
+	line-height: 24px
+	text-transform: uppercase
+	margin: 40px 0px 20px
+.page-headline
+	font-family: "aeroport", sans-serif
+	font-weight: bold
+	font-size: 120px
+	line-height: 100px
+	color: #fff
+	@media screen and (max-width: 720px)
+		font-size: 60px
+		line-height: 60px
+
+.tab
+	display: none
+	&-active
+		display: block
+.gray
+	background: #333		
+
+@import nav
+@import hero
+@import main-project
+@import whatwedo
+@import team
+@import education
+@import contact
+
+//Работы
+@import work/hero
+@import work/fillter
+@import work/work
+
+
+//Страница проекта
+@import single_project/main
+
+//Команда
+@import team/main

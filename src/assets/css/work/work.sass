@@ -1,0 +1,79 @@
+@import ../_vars
+.work__text
+    margin: 40px 0px
+    width: 30%
+    @media screen and (max-width: 720px)
+        width: 100%
+        margin: 20px 0px
+    h2
+        margin-bottom: 20px
+
+.work-wrapper
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    &__item
+        height: 560px
+        width: 100%
+        position: relative
+        margin: 20px 0px
+        background-repeat: no-repeat
+        background-size: cover
+        transition: all 0.3s ease-in-out
+        @media screen and (max-width: 720px)
+            height: 40vh
+        &:not(:nth-child(1))
+            width: 48%
+            @media screen and (max-width: 720px)
+                width: 100%
+            .work-wrapper__headline
+                width: 50%
+                @media screen and (max-width: 720px)
+                    width: 80%
+
+        &:hover
+            transform: scale(1.01)
+            .work-wrapper
+                &__overlay
+                    opacity: 1
+                &__headline
+                    color: #ffffff
+                    p
+                        opacity: 1
+                        transform: translateY(0px)
+
+    &__overlay
+        background: transparentize($color: $text, $amount: 0.7)
+        backdrop-filter: blur(2px)
+        position: absolute
+        width: 100%
+        height: 100%
+        opacity: 0
+        transition: all 0.5s ease
+    &__link
+        position: absolute
+        height: 100%
+        width: 100%
+        z-index: 1
+        top: 0
+        left: 0
+    &__headline
+        position: absolute
+        top: 20px
+        left: 20px
+        width: 30%
+        @media screen and (max-width: 720px)
+            width: 80%
+        h2
+            transition: all 0.5s ease
+            font-weight: 600
+        p
+            opacity: 0
+            transform: translateY(10px)
+            transition: all 0.5s ease
+            color: #fff
+    &__tag-wrapper
+        position: absolute
+        bottom: 20px
+        left: 20px
+        z-index: 2

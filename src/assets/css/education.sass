@@ -1,0 +1,72 @@
+@import _vars
+
+.education
+    //background: $education
+    position: relative
+    width: 100%
+    //padding: 50px 0px
+    &-bg
+        position: absolute
+        height: 85%
+        top: 0
+        width: 100%
+        z-index: -1
+        background: $education
+    &-headline
+        width: 40%
+        @media screen and (max-width: 720px)
+            width: 100%
+    &-showall
+        font-weight: bold
+        font-size: 42px
+        line-height: 20px
+        text-transform: uppercase
+        text-align: center
+        display: inline-block
+        width: 100%
+        color: $education
+        padding: 40px
+    .section-headline
+        margin: 0px 0px 20px
+.education-case
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+    &-item
+        padding: 40px
+        width: 100%
+        height: 450px
+        background-position: center center
+        background-size: cover
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        color: #fff
+        margin: 20px 0px
+        position: relative
+        transition: all 0.3s ease-in-out
+        &:hover
+            transform: translateY(-5px)
+        &:not(:nth-child(1))
+            width: 48%
+            @media screen and (max-width: 720px)
+                width: 100%
+            .education-case-item__headline
+                width: 90%
+        &__perk
+            display: flex
+            justify-content: space-between
+        &__headline
+            width: 40%
+            font-size: 32px
+            line-height: 36px
+            font-weight: 700
+            @media screen and (max-width: 720px)
+                width: 90%
+        &__href
+            position: absolute
+            top: 0
+            left: 0
+            z-index: 1
+            width: 100%
+            height: 100%

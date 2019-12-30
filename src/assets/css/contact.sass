@@ -1,0 +1,46 @@
+@import _vars
+.contact
+    margin: 40px 0px
+.contact-wrapper
+    position: relative
+    display: flex
+    margin: 20px 0px
+    height: 500px
+    &__img
+        height: 100%
+        width: 100%
+        position: absolute
+        background-position: center center
+        background-size: cover
+        background-repeat: no-repeat
+        animation: flow-gradient 30s ease-in-out infinite
+    &__overlay
+        background: rgba(0, 40, 75, 0.6)
+        backdrop-filter: blur(40px)
+        height: 100%
+        width: 100%
+        position: absolute
+        z-index: 1
+
+    &__text
+        padding: 40px
+        z-index: 3
+        color: #fff
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        a
+            color: #fff
+    &__follow a
+        margin-right: 20px
+
+.contact-btn
+    padding: 12px 20px
+    color: $text!important
+    background-color: #fff
+    display: inline-block
+    margin-right: 20px
+    margin-top: 20px
+    &:hover
+        background-color: $accent
+        color: #fff!important

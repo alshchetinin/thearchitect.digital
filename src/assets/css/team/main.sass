@@ -1,0 +1,31 @@
+@import ../_vars
+
+.team-hero
+    height: 60vh    
+    display: flex
+    //justify-content: flex-end
+    flex-direction: column-reverse
+    padding-bottom: 40px
+
+.team__conatiner
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+    //grid-template-rows: repeat(3, 1fr)
+    grid-gap: 2vw
+    @media screen and (max-width: 720px)
+        grid-template-columns: repeat(2, 1fr)
+
+.team-item
+    color: #fff
+
+    &__name
+        font-size: 20px
+        margin: 0px
+        font-weight: 600
+        @media screen and (max-width: 720px)
+            font-size: 16px
+            font-weight: 500
+    &__position
+        font-size: 14px
+        line-height: 14px
+        opacity: 0.5    

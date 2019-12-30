@@ -1,0 +1,19 @@
+@import ../_vars
+.work-hero
+    height: calc(100vh - 87px)
+    width: 100%
+    background: linear-gradient(187.32deg, #00284b 31.14%, #ff403c 88.47%)
+    animation: flow-gradient 6s ease-in-out infinite
+    background-size: 200%
+    @media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0)
+        background-size: 100%
+    @media screen and (max-width: 720px)
+        height: 60vh
+        padding-bottom: 20px
+
+    .container
+        height: 100%
+        display: flex
+        align-items: center
+        @media screen and (max-width: 720px)
+            align-items: flex-end

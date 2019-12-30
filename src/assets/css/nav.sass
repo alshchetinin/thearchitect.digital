@@ -1,0 +1,90 @@
+
+nav
+    position: sticky
+    width: 100%
+    top: 0
+    z-index: 999
+    padding: 14px 0px
+    background-color: rgba(255, 255, 255, 0.8)
+    backdrop-filter: blur(10px)
+    @media screen and (max-width: 720px)
+        padding: 10px 0px
+.languageSwitch
+    padding-right: 20px
+    @media screen and (max-width: 720px)
+        order: 3
+
+    .current
+        opacity: 1
+
+    a
+        display: block
+        text-transform: uppercase
+        padding: 0px
+        margin: 0px
+        font-size: 10px
+        font-weight: 600
+        opacity: 0.5
+
+.nav
+    display: flex
+    justify-content: space-between
+    
+    @media screen and (max-width: 720px)
+        //flex-direction: column
+    &__item
+        display: flex
+        align-items: flex-end
+        @media screen and (max-width: 720px)    
+            
+            justify-content: space-between
+    .logo
+        padding-right: 100px
+        @media screen and (max-width: 720px)
+            padding-left: 0px
+            padding-right: 0px
+
+    .nav__description
+        font-weight: 500
+        font-size: 14px
+        line-height: 18px
+
+.primary-menu
+    
+    @media screen and (max-width: 720px)
+        width: 100%
+    ul
+        display: flex
+        margin: 0px
+        @media screen and (max-width: 720px)
+            justify-content: space-between
+            padding: 0px
+        li
+            list-style-type: none
+
+            a
+                padding: 11px 8px
+                font-size: 14px
+                font-weight: 400
+                
+    .current_page_item
+        a 
+            color: $accent !important
+//белое меню
+.nav-white
+    nav
+        position: absolute
+        background-color: rgba(0, 40, 75, 0.68)
+    .nav__description
+        color: #fff
+    .primary-menu
+        color: #fff
+        a
+            color: #ffffff
+    svg path
+        fill: #fff
+.nav-def
+    nav 
+        position: absolute
+        @media screen and (max-width: 720px)
+            position: fixed
