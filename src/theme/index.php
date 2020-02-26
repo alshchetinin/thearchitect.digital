@@ -9,6 +9,7 @@
 			Диджитал-эксперт в&nbsp;девелопменте
 
 		</div>
+		<!-- <a href="#popupform" class="btn">Оставить заявку</a> -->
 
 	</div>
 </section>
@@ -236,4 +237,36 @@
 
 	</div>
 </section> -->
+
+<section class="form-section">
+
+	<div class="container">
+		<h2 class="form-headline">Связаться с командой<br>The Architect</h2>
+		<p class="form-decription">Чтобы проконсультироваться, заказать проект или предложить сотрудничество, оставьте заявку и в ближайшее время мы свяжемся с вами. Если хотите быстро обсудить детали и задать вопросы — звоните по номеру +7 922 001 00 50.</p>
+		<div class="form-callback">
+		<?php echo do_shortcode('[contact-form-7 id="333" title="Расскажите о своем проекте"]'); ?>
+		
+		</div>
+	</div>
+<script>
+$('.form-callback-input, .form-callback-bottom-wrapper-input').click(function (e) { 
+	e.preventDefault();
+	$('.form-callback-input-focus').removeClass('form-callback-input-focus');
+	$(this).addClass('form-callback-input-focus');
+	$(this).find('input').focus()
+	$(this).find('textarea').focus()
+	
+});
+$('.form-callback-bottom-submit').click(function (e) { 
+	e.preventDefault();
+	$('.form-callback .wpcf7-form').submit();
+});
+
+document.addEventListener( 'wpcf7mailsen', function( event ) {
+    $('.form-callback-bottom-submit input').attr('value', 'Заявка отправлена');	
+}, false );
+
+</script>
+</section>
+
 <?php get_footer(); ?>

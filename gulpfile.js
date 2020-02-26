@@ -19,8 +19,8 @@ const sourcemaps = require("gulp-sourcemaps");
 const uglify = require("gulp-uglify");
 const zip = require("gulp-vinyl-zip");
 const sass = require("gulp-sass");
-const autoprefixer = require('gulp-autoprefixer');
-const deploy = require('gulp-deploy-git');
+const autoprefixer = require("gulp-autoprefixer");
+const deploy = require("gulp-deploy-git");
 
 /* -------------------------------------------------------------------------------------------------
 Theme Name
@@ -180,16 +180,20 @@ function copyFontsDev() {
 }
 
 function stylesDev() {
-  return src("./src/assets/css/style.sass")
-    .pipe(sourcemaps.init())
-    .pipe(sass({ includePaths: "node_modules" }).on("error", sass.logError))
-    .pipe(autoprefixer({
-      grid: true,
-      overrideBrowserslist: ["last 10 versions"]
-    }))
-    //.pipe(sourcemaps.write("."))
-    .pipe(dest("./build/wordpress/wp-content/themes/" + themeName))
-    .pipe(browserSync.stream({ match: "**/*.css" }));
+  return (
+    src("./src/assets/css/style.sass")
+      .pipe(sourcemaps.init())
+      .pipe(sass({ includePaths: "node_modules" }).on("error", sass.logError))
+      .pipe(
+        autoprefixer({
+          grid: true,
+          overrideBrowserslist: ["last 10 versions"]
+        })
+      )
+      //.pipe(sourcemaps.write("."))
+      .pipe(dest("./build/wordpress/wp-content/themes/" + themeName))
+      .pipe(browserSync.stream({ match: "**/*.css" }))
+  );
 }
 
 function headerScriptsDev() {
@@ -254,10 +258,12 @@ function copyFontsProd() {
 function stylesProd() {
   return src("./src/assets/css/style.sass")
     .pipe(sass({ includePaths: "node_modules" }).on("error", sass.logError))
-    .pipe(autoprefixer({
-      grid: true,
-      overrideBrowserslist: ["last 10 versions"]
-    }))
+    .pipe(
+      autoprefixer({
+        grid: true,
+        overrideBrowserslist: ["last 10 versions"]
+      })
+    )
     .pipe(dest("./dist/themes/" + themeName));
 }
 
@@ -311,10 +317,11 @@ function zipProd() {
 }
 
 function gitProd() {
-  return src("./dist/themes/" + themeName + "/**/*")
-    .pipe(deploy({
-      repository: 'https://github.com/alshchetinin/thearchetecttheme.git'
-    }));
+  return src("./dist/themes/" + themeName + "/**/*").pipe(
+    deploy({
+      repository: "https://github.com/alshchetinin/thearchetecttheme.git"
+    })
+  );
 }
 
 exports.prod = series(
